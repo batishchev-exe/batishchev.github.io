@@ -15,10 +15,26 @@
         
         article p { margin-bottom: 20px; font-size: 1.05em; }
         blockquote { border-left: 3px solid #0066cc; padding-left: 15px; margin: 20px 0; color: #555; font-style: italic; }
+
+        /* Interaction Section Styling */
+        .post-interactions {
+            margin: 40px 0 20px 0;
+            padding: 20px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .comments-section { margin-top: 40px; }
+
         
         .back-link { display: inline-block; margin-top: 30px; color: #0066cc; text-decoration: none; }
         footer { text-align: center; padding: 40px 0; color: #888; font-size: 0.9em; border-top: 1px solid #eee; margin-top: 40px; }
     </style>
+
+    <script class="lyket" src="https://unpkg.com/@lyket/widget@latest/dist/lyket.js"></script>
 </head>
 <body>
 
@@ -45,6 +61,35 @@
 
             <p>Another paragraph.</p>
         </article>
+
+        <div class="post-interactions">
+            <span>Enjoyed this post? Leave a clap/like:</span>
+            <div 
+                data-lyket-type="clap" 
+                data-lyket-namespace="blog" 
+                data-lyket-id="post-1"
+                data-lyket-template="heart"
+            ></div>
+        </div>
+
+        <div class="comments-section">
+            <h3>Comments</h3>
+            <script src="https://giscus.app/client.js"
+                    data-repo="batishchev-exe/batishchev-exe.github.io"
+                    data-repo-id="R_kgDONG1234"
+                    data-category="Announcements"
+                    data-category-id="DIC_kwDONG1234"
+                    data-mapping="pathname"
+                    data-strict="0"
+                    data-reactions-enabled="1"
+                    data-emit-metadata="0"
+                    data-input-position="bottom"
+                    data-theme="preferred_color_scheme"
+                    data-lang="en"
+                    crossorigin="anonymous"
+                    async>
+            </script>
+        </div>
 
         <a href="blog.html" class="back-link">&larr; Back to all blog posts</a>
     </main>
