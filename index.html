@@ -14,7 +14,7 @@
             padding: 20px;
             background-color: #fcfcfc;
         }
-        header { text-align: center; padding: 40px 0; }
+        header { text-align: center; padding: 40px 0 20px 0; }
         h1 { margin: 0; font-weight: 600; color: #111; }
         .ipa { font-size: 0.6em; color: #666; font-weight: normal; font-family: monospace; }
         p.subtitle { color: #666; font-style: italic; margin-top: 5px; }
@@ -23,62 +23,99 @@
         nav a.active { color: #111; border-bottom: 2px solid #111; padding-bottom: 5px; }
         section { padding: 20px 0; }
         footer { text-align: center; padding: 40px 0; color: #888; font-size: 0.9em; border-top: 1px solid #eee; }
-    .profile-photo img {
+
+        /* Two-Column Flex Grid for Bio and Headshot */
+        .about-grid {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .about-text {
+            flex: 1 1 65%;
+        }
+
+        .about-text p {
+            margin: 0 0 1rem 0;
+        }
+
+        .about-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .profile-photo {
+            flex: 0 0 240px;
+        }
+
+        .profile-photo img {
             width: 100%;
-            max-width: 260px; /* Constrains the massive high-quality photo */
-            height: auto;     /* Keeps the proportions perfect */
+            height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
             border: 1px solid #eee;
             display: block;
-            margin: 0 auto;
+            object-fit: cover;
         }
-    
+
+        /* Responsive Fallback: stacks cleanly on phones */
+        @media (max-width: 680px) {
+            .about-grid {
+                flex-direction: column-reverse;
+                gap: 1.5rem;
+            }
+            .profile-photo {
+                flex: none;
+                max-width: 220px;
+                margin: 0 auto;
+            }
+        }
     </style>
 </head>
 <body>
 
     <header>
-                <h1>Alexei Luka Batishchev</h1>
-            <span style="font-size: 1 em; color: #666; class="ipa">[ɐlʲɪkˈsʲej ɫʊˈka bɐˈtʲiɕəf]</span></h1>
+        <h1>Alexei Luka Batishchev <span class="ipa">[ɐlʲɪkˈsʲej ɫʊˈka bɐˈtʲiɕəf]</span></h1>
         
-        <p style="margin: 0; font-style: italic; color: #475569;">
-  Sociolinguist and Language Educator 
-  <span style="color: blue; font-style: normal; margin-left: 6px;">(he/they)</span>
-</p>
+        <p style="margin: 4px 0 0 0; font-style: italic; color: #475569;">
+            Sociolinguist and Language Educator 
+            <span style="color: blue; font-style: normal; margin-left: 6px;">(he/they)</span>
+        </p>
     </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="bio.html">Bio / CV</a>
-    <a href="academic.html">Research</a>
-
-</nav>
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="bio.html">Bio / CV</a>
+        <a href="academic.html">Research</a>
+    </nav>
 
     <section>
-<h2>About Me</h2>
-<p>
-  Hi! I am a sociolinguist and language educator in Anchorage, Alaska. 
-  I recently completed my M.A. coursework in Applied Linguistics at UMass Boston. 
-  I am writing my Master's thesis on diaspora sociophonetics and sociopolitical stance and 
-  applying to doctoral programs.
-</p>
-<p>
-  My research focuses on how minoritized and marginalized speakers navigate grammatical systems and identity construction in discourse.
-In addition to my scholarship, I teach adult ESOL and Russian.
-</p>
-<p>
-  I live, work, and study on the unceded ancestral lands of the Dena'ina Athabaskan people.
-</p>
-
+        <h2>About Me</h2>
         
-<div class="profile-photo">
-    <img src="alexei%20batishchev%20headshot.jpg" alt="Headshot of Alexei Batishchev smiling outdoors in front of spruce foliage in Alaska.">
-</div>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>
+                    Hi! I am a sociolinguist and language educator in Anchorage, Alaska. 
+                    I recently completed my M.A. coursework in Applied Linguistics at UMass Boston. 
+                    I am writing my Master's thesis on diaspora sociophonetics and sociopolitical stance and 
+                    applying to doctoral programs[cite: 17, 25].
+                </p>
+                <p>
+                    My research focuses on how minoritized and marginalized speakers navigate grammatical systems and identity construction in discourse[cite: 17, 19].
+                    In addition to my scholarship, I teach adult ESOL and Russian[cite: 17, 24].
+                </p>
+                <p>
+                    I live, work, and study on the unceded ancestral lands of the Dena'ina Athabaskan people.
+                </p>
+            </div>
 
+            <div class="profile-photo">
+                <img src="alexei%20batishchev%20headshot.jpg" alt="Headshot of Alexei Batishchev smiling outdoors in front of spruce foliage in Alaska.">
+            </div>
+        </div>
         
-        <h3>Contact</h3>
-        <p>Feel free to reach out via email at <a href="mailto:alexeibatishchev@gmail.com">alexeibatishchev [at] gmail.com</a>. I am always happy to connect.</p>
+        <h3 style="margin-top: 2rem;">Contact</h3>
+        <p>Feel free to reach out via email at <a href="mailto:alexeibatishchev@gmail.com">alexeibatishchev [at] gmail.com</a>[cite: 17]. I am always happy to connect.</p>
     </section>
 
     <footer>
