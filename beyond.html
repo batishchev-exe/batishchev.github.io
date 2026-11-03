@@ -3,102 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alexei Batishchev | Art </title>
+    <title>Alexei Batishchev | Art</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; background-color: #fcfcfc; }
-        header { text-align: center; padding: 40px 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fcfcfc;
+        }
+        header { text-align: center; padding: 40px 0 20px 0; }
         h1 { margin: 0; font-weight: 600; color: #111; }
         .ipa { font-size: 0.6em; color: #666; font-weight: normal; font-family: monospace; }
-        p.subtitle { color: #666; font-style: italic; margin-top: 5px; }
+        p.subtitle { color: #475569; font-style: italic; margin-top: 5px; }
         nav { text-align: center; margin: 20px 0; border-bottom: 1px solid #eee; padding-bottom: 20px; }
         nav a { margin: 0 15px; text-decoration: none; color: #0066cc; font-weight: 500; }
         nav a.active { color: #111; border-bottom: 2px solid #111; padding-bottom: 5px; }
         section { padding: 20px 0; }
+        footer { text-align: center; padding: 40px 0; color: #888; font-size: 0.9em; border-top: 1px solid #eee; }
 
-/* Artist Statement Banner */
-        .artist-statement {
-            background-color: #fff;
-            border: 1px solid #e2e8f0;
-            border-left: 4px solid #111;
-            padding: 25px 30px;
-            border-radius: 6px;
-            margin-bottom: 40px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
-        .artist-statement h3 {
-            margin-top: 0;
+        /* Section Headings Matching Index */
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
             color: #111;
-            font-size: 1.2em;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.4rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
         }
-        .artist-statement p {
-            color: #444;
-            font-size: 0.98em;
-            line-height: 1.7;
-            margin-bottom: 12px;
+
+        /* Statement Card */
+        .statement-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
         }
-        .artist-statement p:last-child {
+
+        .statement-card p {
+            margin: 0 0 1rem 0;
+        }
+
+        .statement-card p:last-child {
             margin-bottom: 0;
         }
-    /* Gallery Grid */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
+
+        /* Substack Card */
+        .feature-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
         }
+
+        .feature-card a.btn {
+            background-color: #FF6719;
+            color: #fff;
+            padding: 9px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9em;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: opacity 0.2s ease;
+        }
+
+        .feature-card a.btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
         .gallery-item {
             background: #fff;
             border: 1px solid #eee;
             padding: 12px;
-            border-radius: 6px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
         }
-        .gallery-item img { width: 100%; height: auto; display: block; border-radius: 4px; }
-        .gallery-item .caption { margin-top: 10px; font-size: 0.9em; color: #555; text-align: center; }
-        
-        footer { text-align: center; padding: 40px 0; color: #888; font-size: 0.9em; border-top: 1px solid #eee; margin-top: 40px; }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+
+        .gallery-item .caption {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #555;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 680px) {
+            .feature-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
 
     <header>
-                <h1>Alexei Luka Batishchev</h1>
-            <span style="font-size: 1 em; color: #666; class="ipa">[ɐlʲɪkˈsʲej ɫʊˈka bɐˈtʲiɕəf]</span></h1>
+        <h1>Alexei Luka Batishchev <span class="ipa">[ɐlʲɪkˈsʲej ɫʊˈka bɐˈtʲiɕəf]</span></h1>
         <p class="subtitle">Select Art Portfolio</p>
     </header>
 
     <nav>
-    <a href="index.html">Home</a>
-    <a href="bio.html">Bio / CV</a>
-    <a href="academic.html">Academic Work</a>
-    <a href="blog.html">Blog</a>
-    <a href="art.html">Art</a>
-</nav>
-<section>
-        <div class="artist-statement">
-            <h3>Artist Statement</h3>
+        <a href="index.html">Home</a>
+        <a href="bio.html">Bio / CV</a>
+        <a href="academic.html">Research</a>
+        <a href="beyond.html" class="active">Art</a>
+    </nav>
+
+    <section>
+        <h2>Artist Statement</h2>
+        <div class="statement-card">
             <p>
-                I am a Moscow-born multidisciplinary artist, poet, and sociolinguist currently based on the unceded Dena'ina lands in Anchorage, Alaska. An autodidact by nature, I am self-taught – but is anyone really <italic>fully self-taught?</italic> – in a variety of mediums including, but not limited to printmaking, photography, zines, painting, drawing, performance, and, of course, mixed media. With my art, I like to explore themes of identity and becoming, intersection of the meraphysical with the material, nostalgia and belonging. Lately, all my commission projects were digital art pieces; I also enjoy working with analog mediums, especially when it comes to manipulation of the 2D space via collage, 3D elements, and using unconvential art products, such as office supplies.
+                I am a Moscow-born multidisciplinary artist, poet, and sociolinguist currently based on the unceded Dena'ina lands in Anchorage, Alaska. An autodidact by nature, I am self-taught – but is anyone really <em>fully self-taught?</em> – in a variety of mediums including, but not limited to printmaking, photography, zines, painting, drawing, performance, and, of course, mixed media. With my art, I like to explore themes of identity and becoming, intersection of the metaphysical with the material, nostalgia and belonging. Lately, all my commission projects were digital art pieces; I also enjoy working with analog mediums, especially when it comes to manipulation of the 2D space via collage, 3D elements, and using unconventional art products, such as office supplies.
             </p>
-            <p>My art and my research are driven by one and the same: who are we – humans? What are the deepest desires of our hearts? How do we tell the world about who we are? 
+            <p>
+                My art and my research are driven by one and the same: who are we – humans? What are the deepest desires of our hearts? How do we tell the world about who we are?
             </p>
-            <p>Feel free to check out my visual works here <italic>and</italic> my poetry on Substack! For other written work, please check out my blog.</p>
+            <p>
+                Feel free to check out my visual works here <em>and</em> my poetry on Substack! For other written work, please check out my blog.
+            </p>
         </div>
 
-<!-- substack -->
-    <div style="background-color: #fff; border: 1px solid #e2e8f0; padding: 20px 25px; border-radius: 6px; margin-bottom: 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
-    <div>
-        <strong style="color: #111; font-size: 1.05em;">Poetry</strong>
-        <p style="margin: 4px 0 0 0; color: #555; font-size: 0.95em;">I publish select poetry on my Substack. I have been writing poetry since a very young age. In my 20s, I dedicated a substancial amount of time to building up my local poetry community by submitting to local publications, participating in writing groups, and hosting a local poetry slam (2023-2026). My poetry appears in <italic>Year Round Queer</italic>, <italic>Butch-Femme Press</italic>, and <italic>Alaska Women Speak</italic>. My poem <a href="https://lowercaseinsides.substack.com/p/ice-migration"><italic>ice migration</italic></a> was nominated for the Pushcart Prize 2023.</p>
-    </div>
-    <a href="https://lowercaseinsides.substack.com" target="_blank" style="background-color: #FF6719; color: #fff; padding: 10px 18px; border-radius: 4px; text-decoration: none; font-size: 0.9em; font-weight: 600; white-space: nowrap;">Read on Substack &rarr;</a>
-</div>
-    
-    <section>
+        <div class="feature-card">
+            <div>
+                <strong style="color: #111; font-size: 1.05em; display: block; margin-bottom: 4px;">Poetry</strong>
+                <p style="margin: 0; color: #555; font-size: 0.95em;">
+                    I publish select poetry on my Substack. I have been writing poetry since a very young age. In my 20s, I dedicated a substantial amount of time to building up my local poetry community by submitting to local publications, participating in writing groups, and hosting a local poetry slam (2023-2026). My poetry appears in <em>Year Round Queer</em>, <em>Butch-Femme Press</em>, and <em>Alaska Women Speak</em>. My poem <a href="https://lowercaseinsides.substack.com/p/ice-migration" style="color: #0066cc; text-decoration: none;"><em>ice migration</em></a> was nominated for the Pushcart Prize 2023.
+                </p>
+            </div>
+            <a href="https://lowercaseinsides.substack.com" target="_blank" rel="noopener noreferrer" class="btn">Read on Substack &rarr;</a>
+        </div>
+
         <h2>Select Works</h2>
-        <div class="gallery">
+        <div class="gallery-grid">
             <div class="gallery-item">
                 <img src="https://via.placeholder.com/400" alt="Artwork Description">
                 <div class="caption"><strong>Piece Title One</strong><br>Digital / Mixed Media, 2026</div>
