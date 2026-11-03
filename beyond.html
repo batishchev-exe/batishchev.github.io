@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alexei Batishchev | Art</title>
+    <title>Alexei Batishchev | Beyond</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -21,56 +21,92 @@
         nav { text-align: center; margin: 20px 0; border-bottom: 1px solid #eee; padding-bottom: 20px; }
         nav a { margin: 0 15px; text-decoration: none; color: #0066cc; font-weight: 500; }
         nav a.active { color: #111; border-bottom: 2px solid #111; padding-bottom: 5px; }
-        section { padding: 20px 0; }
-        footer { text-align: center; padding: 40px 0; color: #888; font-size: 0.9em; border-top: 1px solid #eee; }
+        section { padding: 15px 0; }
+        footer { text-align: center; padding: 40px 0; color: #888; font-size: 0.9em; border-top: 1px solid #eee; margin-top: 40px; }
 
-        /* Section Headings Matching Index */
+        /* Headings */
         h2 {
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             font-weight: 600;
             color: #111;
             border-bottom: 2px solid #eee;
             padding-bottom: 0.4rem;
-            margin-top: 0;
+            margin-top: 1.5rem;
             margin-bottom: 1rem;
         }
 
-        /* Statement Card */
-        .statement-card {
+        /* Content Cards */
+        .content-card {
             background: #fff;
-            border: 1px solid #eee;
+            border: 1px solid #e2e8f0;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
             padding: 1.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.75rem;
         }
 
-        .statement-card p {
+        .content-card p {
             margin: 0 0 1rem 0;
+            color: #334155;
+            font-size: 0.98em;
+            line-height: 1.65;
         }
 
-        .statement-card p:last-child {
+        .content-card p:last-child {
             margin-bottom: 0;
         }
 
-        /* Substack Card */
+        /* Project / Resource List */
+        .project-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .project-list li {
+            padding: 0.85rem 0;
+            border-bottom: 1px solid #f1f5f9;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        .project-list li:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .project-list li:first-child {
+            padding-top: 0;
+        }
+
+        .project-list a {
+            color: #0066cc;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .project-list a:hover {
+            text-decoration: underline;
+        }
+
+        /* Substack / Featured Banner */
         .feature-card {
             background: #fff;
-            border: 1px solid #eee;
+            border: 1px solid #e2e8f0;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
             padding: 1.25rem 1.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.75rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
         }
 
         .feature-card a.btn {
             background-color: #FF6719;
             color: #fff;
-            padding: 9px 16px;
+            padding: 10px 18px;
             border-radius: 6px;
             text-decoration: none;
             font-size: 0.9em;
@@ -84,7 +120,7 @@
         }
 
         /* Gallery Grid */
-        .gallery-grid {
+        .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 1.5rem;
@@ -96,7 +132,7 @@
             border: 1px solid #eee;
             padding: 12px;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
         }
 
         .gallery-item img {
@@ -115,7 +151,6 @@
             line-height: 1.4;
         }
 
-        /* Mobile adjustments */
         @media (max-width: 680px) {
             .feature-card {
                 flex-direction: column;
@@ -129,52 +164,93 @@
 
     <header>
         <h1>Alexei Luka Batishchev <span class="ipa">[ɐlʲɪkˈsʲej ɫʊˈka bɐˈtʲiɕəf]</span></h1>
-        <p class="subtitle">Beyond Research</p>
+        <p class="subtitle">Personal Lore, Art, Zines & Community</p>
     </header>
 
     <nav>
         <a href="index.html">Home</a>
         <a href="bio.html">Bio / CV</a>
         <a href="academic.html">Research</a>
-        <a href="beyond.html" class="active">Beyond Research</a>
+        <a href="beyond.html" class="active">Beyond</a>
     </nav>
 
-    <section>
-        <h2>Artist Statement</h2>
-        <div class="statement-card">
-            <p>
-                I am a Moscow-born multidisciplinary artist, poet, and sociolinguist currently based on the unceded Dena'ina lands in Anchorage, Alaska. An autodidact by nature, I am self-taught – but is anyone really <em>fully self-taught?</em> – in a variety of mediums including, but not limited to printmaking, photography, zines, painting, drawing, performance, and, of course, mixed media. With my art, I like to explore themes of identity and becoming, intersection of the metaphysical with the material, nostalgia and belonging. Lately, all my commission projects were digital art pieces; I also enjoy working with analog mediums, especially when it comes to manipulation of the 2D space via collage, 3D elements, and using unconventional art products, such as office supplies.
-            </p>
-            <p>
-                My art and my research are driven by one and the same: who are we – humans? What are the deepest desires of our hearts? How do we tell the world about who we are?
-            </p>
-            <p>
-                Feel free to check out my visual works here <em>and</em> my poetry on Substack! For other written work, please check out my blog.
-            </p>
-        </div>
-
-        <div class="feature-card">
-            <div>
-                <strong style="color: #111; font-size: 1.05em; display: block; margin-bottom: 4px;">Poetry</strong>
-                <p style="margin: 0; color: #555; font-size: 0.95em;">
-                    I publish select poetry on my Substack. I have been writing poetry since a very young age. In my 20s, I dedicated a substantial amount of time to building up my local poetry community by submitting to local publications, participating in writing groups, and hosting a local poetry slam (2023-2026). My poetry appears in <em>Year Round Queer</em>, <em>Butch-Femme Press</em>, and <em>Alaska Women Speak</em>. My poem <a href="https://lowercaseinsides.substack.com/p/ice-migration" style="color: #0066cc; text-decoration: none;"><em>ice migration</em></a> was nominated for the Pushcart Prize 2023.
+    <main>
+        <!-- Life & Lore -->
+        <section>
+            <h2>About and Lore</h2>
+            <div class="content-card">
+                <p>Hi, friends!</p>
+                <p>Fun name facts: my name is a family name! I am the fourth Alexei in my known lineage. My name is Russian and originates from Ancient Greek Ἀλέξιος, meaning “helper; defender.” My last name Batishchev comes from the word батя [ˈbatʲə] which is a familiar address for “dad” or “elder.”</p>
+                <p>Some tongue-in-cheek folk etymology of my many names: Лёха [ˈlʲɵxə] from the word лихач [lʲɪˈxat͡ɕ] meaning “daredevil”; Лука [ɫʊˈka] from the word “лукавый” [ɫʊˈkavɨj] meaning “sly” and “playful.”</p>
+                <p>I grew up in Moscow, Russia in a middle class "sleeping district." At sweet 16, I moved to Japan and finished my secondary schooling in an American School. Since then, I have lived in Virginia, Texas, and finally Alaska.
                 </p>
+                <p>When I am not researching, teaching, or writing, I spend my time spending time with my friends and my cats, reading, running, or learning yet another language. I am also a poet and a visual artist. You can find more information about this down below.</p>
             </div>
-            <a href="https://lowercaseinsides.substack.com" target="_blank" rel="noopener noreferrer" class="btn">Read on Substack &rarr;</a>
-        </div>
+        </section>
 
-        <h2>Select Works</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="https://via.placeholder.com/400" alt="Artwork Description">
-                <div class="caption"><strong>Piece Title One</strong><br>Digital / Mixed Media, 2026</div>
+        <!-- Artist Statement -->
+        <section>
+            <h2>Artist Statement</h2>
+            <div class="content-card">
+                <p>I am a Moscow-born multidisciplinary artist, poet, and sociolinguist currently based on the unceded Dena'ina lands in Anchorage, Alaska. An autodidact by nature, I am self-taught – but is anyone really fully self-taught? – in a variety of mediums including, but not limited to printmaking, photography, zines, painting, drawing, performance, and, of course, mixed media.</p>
+                <p>With my art, I like to explore themes of identity and becoming, intersection of the metaphysical with the material, nostalgia and belonging. Lately, all my commission projects were digital art pieces; I am proficient in both raster- and vector-based art, mostly using Procreate and Adobe Illustrator. I also enjoy working with analog mediums, especially when it comes to manipulation of the 2D space via collage, 3D elements, and using unconventional art products, such as office supplies.</p>
+                <p>My art and my research are driven by one and the same: who are we – humans? What are the deepest desires of our hearts? How do we tell the world about who we are?</p>
+                <p>Feel free to check out my visual works here and my poetry on Substack!</p>
             </div>
-            <div class="gallery-item">
-                <img src="https://via.placeholder.com/400" alt="Artwork Description">
-                <div class="caption"><strong>Piece Title Two</strong><br>Collage, 2026</div>
+        </section>
+
+        <!-- Selected Projects & Collaborations -->
+        <section>
+            <h2>Select Projects & Artistic Collaborations</h2>
+            <div class="content-card">
+                <ul class="project-list">
+                    <li>I’ve had great pleasure designing, illustrating, and assisting in translation of the <a href="https://www.peerleadernavigators.org/RJSP" target="_blank" rel="noopener noreferrer">Russian Jack Springs Park Signs</a>. This project features 24 of the many languages in Anchorage, Alaska as well as practical education about the history of the park, the outdoors, and family-friendly activities.</li>
+                    <li>I have created the single cover for Ruth & Kengo’s song <a href="https://open.spotify.com/track/15iBCc71DzyIIFXZrTmx86?si=0bffecf5cd4a4b3a" target="_blank" rel="noopener noreferrer">Kaleidoscope Being</a>.</li>
+                    <li>I have created the <a href="https://www.bikeanchorage.org/ride_for_anc" target="_blank" rel="noopener noreferrer">poster</a> for the second annual Anchorage Critical Mass organized by <a href="https://www.bikeanchorage.org/about" target="_blank" rel="noopener noreferrer">Bike Anchorage</a>.</li>
+                </ul>
+                <p style="margin-top: 1.25rem;">I am always open to inquiries about artistic collaboration! I usually take on larger projects, such as the aforementioned – event flyers, covers, logos and branding, and community-based projects.</p>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Zines -->
+        <section>
+            <h2>Zines</h2>
+            <div class="content-card">
+                <p>I am also a zinester: I have used zines in my teaching, advocacy, poetry, research, and artistic expression. You can read my select zines here:</p>
+                <ul class="project-list">
+                    <li><a href="https://drive.google.com/drive/u/1/folders/1sdNd0VLU9Fkq2tNfaVF7JxqxoFRgg4gF" target="_blank" rel="noopener noreferrer">Mayakovsky Case: A Short Collection of Contemporary Russian Antiwar Poems</a> (opens in new window)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Poetry & Substack Banner -->
+        <section>
+            <div class="feature-card">
+                <div>
+                    <strong style="color: #111; font-size: 1.05em; display: block; margin-bottom: 4px;">Poetry</strong>
+                    <p style="margin: 0; color: #555; font-size: 0.95em; line-height: 1.55;">
+                        I publish selected poetry on my Substack. I have been writing poetry since a very young age. In my 20s, I dedicated a substantial amount of time to building up my local poetry community by submitting to local publications, participating in writing groups, and hosting a local poetry slam (2023-2026). My poetry appears in <em>Year Round Queer</em>, <em>Butch-Femme Press</em>, and <em>Alaska Women Speak</em>. My poem <a href="https://lowercaseinsides.substack.com/p/ice-migration" target="_blank" rel="noopener noreferrer" style="color: #0066cc;"><em>ice migration</em></a> was nominated for the Pushcart Prize 2023.
+                    </p>
+                </div>
+                <a href="https://lowercaseinsides.substack.com" target="_blank" rel="noopener noreferrer" class="btn">Read on Substack &rarr;</a>
+            </div>
+        </section>
+
+        <!-- Visual Art Gallery Grid -->
+        <section>
+            <h2>Select Works</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400" alt="Artwork Description">
+                    <div class="caption"><strong>Piece Title One</strong><br>Digital / Mixed Media, 2026</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400" alt="Artwork Description">
+                    <div class="caption"><strong>Piece Title Two</strong><br>Collage, 2026</div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2026 Alexei Batishchev.</p>
